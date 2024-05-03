@@ -140,54 +140,46 @@ const DetailsPage = () => {
         contentContainerStyle={{ paddingBottom: 100 }}
         ref={scrollRef}
         scrollEventThrottle={16}>
-        <Animated.Image
-          source={{ uri: listing.xl_picture_url }}
-          style={[styles.image, imageAnimatedStyle]}
-          resizeMode="cover"
-        />
+      
 
         <View style={styles.infoContainer}>
-          <Text style={styles.name}>{listing.name}</Text>
+          <Text style={styles.name}>name </Text>
           <Text style={styles.location}>
-            {listing.room_type} in {listing.smart_location}
           </Text>
           <Text style={styles.rooms}>
-            {listing.guests_included} guests · {listing.bedrooms} bedrooms · {listing.beds} bed ·{' '}
-            {listing.bathrooms} bathrooms
+            guests · 10 bedrooms · 2  bed ·{' '}
+            2 bathrooms
           </Text>
           <View style={{ flexDirection: 'row', gap: 4 }}>
             <Ionicons name="star" size={16} />
             <Text style={styles.ratings}>
-              {listing.review_scores_rating / 20} · {listing.number_of_reviews} reviews
+             200 · 100 reviews
             </Text>
           </View>
           <View style={styles.divider} />
 
           <View style={styles.hostView}>
-            <Image source={{ uri: listing.host_picture_url }} style={styles.host} />
+            {/* <Image source={{ uri:  }} style={styles.host} /> */}
 
             <View>
-              <Text style={{ fontWeight: '500', fontSize: 16 }}>Hosted by {listing.host_name}</Text>
-              <Text>Host since {listing.host_since}</Text>
+              <Text style={{ fontWeight: '500', fontSize: 16 }}>Hosted by name of ......</Text>
+              <Text>Host since </Text>
             </View>
           </View>
 
           <View style={styles.divider} />
 
-          <Text style={styles.description}>{listing.description}</Text>
+          <Text style={styles.description}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae aspernatur esse architecto accusantium perspiciatis officia omnis, dolorum in? Ducimus iusto aspernatur possimus at fuga, saepe voluptate in quibusdam qui inventore!</Text>
         </View>
       </Animated.ScrollView>
 
       <Animated.View style={defaultStyles.footer} entering={SlideInDown.delay(200)}>
         <View
           style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-          <TouchableOpacity style={styles.footerText}>
-            <Text style={styles.footerPrice}>€{listing.price}</Text>
-            <Text>night</Text>
-          </TouchableOpacity>
+        
 
           <TouchableOpacity style={[defaultStyles.btn, { paddingRight: 20, paddingLeft: 20 }]}>
-            <Text style={defaultStyles.btnText}>Reserve</Text>
+            <Text style={defaultStyles.btnText}>add reviews </Text>
           </TouchableOpacity>
         </View>
       </Animated.View>

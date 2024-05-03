@@ -12,7 +12,7 @@ const [data ,setData]=useState([])
 useEffect(() => {
   const fetchData = async () => {
     try {
-      const response = await axios.get('http:// http://172.20.10.10:8000/api/destinations/');
+      const response = await axios.get('http://172.20.10.10:8000/api/destinations/');
       setData(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);

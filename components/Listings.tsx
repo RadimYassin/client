@@ -37,7 +37,7 @@ console.log(items);
     <Link href={`/listing/${item.id}`} asChild>
       <TouchableOpacity>
         <Animated.View style={styles.listing} entering={FadeInRight} exiting={FadeOutLeft}>
-          <Animated.Image source={{ uri:`http://192.168.0.147:8000`+item.image }} style={styles.image} />
+          <Animated.Image source={{ uri:`http://172.20.10.10:8000`+item.image }} style={styles.image} />
           <TouchableOpacity style={{ position: 'absolute', right: 30, top: 30 }}>
             <Ionicons name="heart-outline" size={24} color="#000" />
           </TouchableOpacity>
