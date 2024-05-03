@@ -11,16 +11,13 @@ interface Props {
   category: string;
 }
 
-const Listings = ({ listing: items, refresh, category }: Props) => {
+const Listings = ({ listing: items, category }: Props) => {
   const listRef = useRef<any>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
   // Update the view to scroll the list back top
-  useEffect(() => {
-    if (refresh) {
-      scrollListTop();
-    }
-  }, [refresh]);
+console.log(items);
+
 
   const scrollListTop = () => {
     listRef.current?.scrollToOffset({ offset: 0, animated: true });
@@ -40,7 +37,7 @@ const Listings = ({ listing: items, refresh, category }: Props) => {
     <Link href={`/listing/${item.id}`} asChild>
       <TouchableOpacity>
         <Animated.View style={styles.listing} entering={FadeInRight} exiting={FadeOutLeft}>
-          <Animated.Image source={{ uri: item.image }} style={styles.image} />
+          <Animated.Image source={{ uri:`http://192.168.0.147:8000`+item.image }} style={styles.image} />
           <TouchableOpacity style={{ position: 'absolute', right: 30, top: 30 }}>
             <Ionicons name="heart-outline" size={24} color="#000" />
           </TouchableOpacity>

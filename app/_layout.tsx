@@ -7,6 +7,7 @@ import {  TouchableOpacity } from 'react-native';
 
 import { Ionicons } from '@expo/vector-icons';
 import Colors from '@/constants/Colors';
+import { Feather } from '@expo/vector-icons';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -51,21 +52,7 @@ function RootLayoutNav() {
 
   return (
     <Stack>
-    <Stack.Screen
-      name="(modals)/login"
-      options={{
-        presentation: 'modal',
-        title: 'Log in or sign up',
-        headerTitleStyle: {
-          fontFamily: 'mon-sb',
-        },
-        headerLeft: () => (
-          <TouchableOpacity onPress={() => router.back()}>
-            <Ionicons name="close-outline" size={28} />
-          </TouchableOpacity>
-        ),
-      }}
-    />
+    
     <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
     <Stack.Screen name="listing/[id]" options={{ headerTitle: '' }} />
     <Stack.Screen
@@ -85,6 +72,53 @@ function RootLayoutNav() {
               padding: 4,
             }}>
             <Ionicons name="close-outline" size={22} />
+          </TouchableOpacity>
+        ),
+      }}
+    />
+
+<Stack.Screen
+      name="(modals)/EditeProfile"
+      options={{
+        presentation: 'modal',
+        title: 'info for user',
+        headerTitleStyle: {
+          fontFamily: 'mon-sb',
+        },
+        headerLeft: () => (
+          <TouchableOpacity style={{paddingHorizontal:10}} onPress={() =>router.back()}>
+<Feather name="arrow-left" size={25}  color="black" />
+          </TouchableOpacity>
+        ),
+      }}
+    />
+
+<Stack.Screen
+      name="(modals)/login"
+      options={{
+        presentation: 'modal',
+        title: 'Log in or sign up',
+        headerTitleStyle: {
+          fontFamily: 'mon-sb',
+        },
+        headerLeft: () => (
+          <TouchableOpacity style={{paddingHorizontal:4}} onPress={() =>router.back()}>
+          <Feather name="arrow-left" size={25}  color="black" />
+                    </TouchableOpacity>
+        ),
+      }}
+    />
+    <Stack.Screen
+      name="(modals)/Register"
+      options={{
+        presentation: 'fullScreenModal',
+        title: 'Register',
+        headerTitleStyle: {
+          fontFamily: 'mon-sb',
+        },
+        headerLeft: () => (
+          <TouchableOpacity style={{paddingHorizontal:4}} onPress={() =>router.back()}>
+<Feather name="arrow-left" size={25}  color="black" />
           </TouchableOpacity>
         ),
       }}
